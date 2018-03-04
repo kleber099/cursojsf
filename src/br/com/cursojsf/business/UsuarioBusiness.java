@@ -12,6 +12,7 @@ import br.com.cursojsf.model.Usuario;
 @ApplicationScoped
 @ManagedBean(name = "usuarioBusiness")
 public class UsuarioBusiness {
+
 	@ManagedProperty("#{usuarioDao}")
 	private UsuarioDao usuarioDao;
 
@@ -79,4 +80,5 @@ public class UsuarioBusiness {
 	public List<Usuario> selecionarTodos() {
 		return usuarioDao.selecionarTodos();
 	}
+
 }

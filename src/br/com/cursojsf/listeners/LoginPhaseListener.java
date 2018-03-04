@@ -11,11 +11,8 @@ import javax.servlet.http.HttpSession;
 
 import br.com.cursojsf.managedbean.LoginBean;
 
-public class LoginPhaseListener implements PhaseListener{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 5568931189988782489L;
+public class LoginPhaseListener implements PhaseListener {
+	private static final long serialVersionUID = -6679617179413348825L;
 
 	public void afterPhase(PhaseEvent event) {
 		FacesContext context = event.getFacesContext();

@@ -11,10 +11,8 @@ import br.com.cursojsf.util.ValidacaoHelper;
 
 @FacesValidator("validators.CpfValidator")
 public class CpfValidator implements Validator {
-
-	@Override
 	public void validate(FacesContext context, UIComponent component, Object value) throws ValidatorException {
-		if(value != null) {
+		if (value != null) {
 			String valor = value.toString();
 			if (!ValidacaoHelper.validaCpf(valor)) {
 				FacesMessage message = new FacesMessage();
@@ -25,5 +23,4 @@ public class CpfValidator implements Validator {
 			}
 		}
 	}
-
 }

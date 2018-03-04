@@ -9,8 +9,6 @@ import javax.faces.convert.FacesConverter;
 
 @FacesConverter("converters.CpfConverter")
 public class CpfConverter implements Converter {
-
-	@Override
 	public Object getAsObject(FacesContext context, UIComponent component, String value) throws ConverterException {
 		if (value != null && !value.equals("")) {
 			String cpf = value.replaceAll("\\.", "").replaceAll("\\-", "");
@@ -27,7 +25,6 @@ public class CpfConverter implements Converter {
 		return value;
 	}
 
-	@Override
 	public String getAsString(FacesContext context, UIComponent component, Object value) throws ConverterException {
 		String cpf = (value == null ? null : value.toString());
 		if (cpf != null && !cpf.equals("")) {
@@ -35,5 +32,4 @@ public class CpfConverter implements Converter {
 		}
 		return cpf;
 	}
-
 }

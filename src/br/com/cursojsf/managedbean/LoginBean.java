@@ -13,55 +13,40 @@ import br.com.cursojsf.model.Usuario;
 @ManagedBean
 @SessionScoped
 public class LoginBean {
+	/** Referencia para a camada de regras de negocio */
 	@ManagedProperty("#{usuarioBusiness}")
 	private UsuarioBusiness usuarioBusiness;
-	
-	private Usuario usuarioAutenticado;
-	private String cpf;
-	private String senha;
-	
 
+	/** Usuario autenticado na aplicacao */
+	private Usuario usuarioAutenticado;
+
+	private String cpf;
+
+	private String senha;
+
+	public void setUsuarioBusiness(UsuarioBusiness usuarioBusiness) {
+		this.usuarioBusiness = usuarioBusiness;
+	}
+	
 	public Usuario getUsuarioAutenticado() {
 		return usuarioAutenticado;
 	}
-
-
-
-	public void setUsuarioAutenticado(Usuario usuarioAutenticado) {
-		this.usuarioAutenticado = usuarioAutenticado;
-	}
-
-
 
 	public String getCpf() {
 		return cpf;
 	}
 
-
-
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-
-
 
 	public String getSenha() {
 		return senha;
 	}
 
-
-
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-
-
-
-	public void setUsuarioBusiness(UsuarioBusiness usuarioBusiness) {
-		this.usuarioBusiness = usuarioBusiness;
-	}
-
-
 
 	public String autenticar() {
 		try {
@@ -70,7 +55,7 @@ public class LoginBean {
 		} catch (UsuarioInvalidoException e) {
 			FacesMessage message = new FacesMessage();
 			message.setSeverity(FacesMessage.SEVERITY_ERROR);
-			message.setDetail("Usuário Inválido");
+			message.setDetail("Usuário ou senha inválidos!");
 			FacesContext.getCurrentInstance().addMessage("loginForm", message);
 			return null;
 		} finally {
@@ -78,5 +63,4 @@ public class LoginBean {
 			senha = null;
 		}
 	}
-	
 }

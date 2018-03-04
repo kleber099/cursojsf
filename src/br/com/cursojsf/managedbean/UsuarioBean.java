@@ -12,10 +12,12 @@ import br.com.cursojsf.model.Usuario;
 @ManagedBean
 @RequestScoped
 public class UsuarioBean {
-
+	
+	/** Referencia para a camada de regras de negocio */
 	@ManagedProperty("#{usuarioBusiness}")
 	private UsuarioBusiness usuarioBusiness;
 
+	/** Usuario a serusado no form. */
 	private Usuario usuario = new Usuario();
 
 	public UsuarioBusiness getUsuarioBusiness() {
@@ -51,9 +53,5 @@ public class UsuarioBean {
 	public String excluir() {
 		usuarioBusiness.excluirUsuario(usuario);
 		return "usuarios";
-	}
-
-	public void exibir() {
-		usuario = usuarioBusiness.selecionar(usuario);
 	}
 }

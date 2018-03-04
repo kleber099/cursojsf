@@ -1,3 +1,5 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:ui="http://java.sun.com/jsf/facelets"
     xmlns:h="http://java.sun.com/jsf/html" 
@@ -15,13 +17,11 @@
 	                <p:inputText id="cpfInput" value="#{loginBean.cpf}" 
 	                    maxlength="11" size="12" required="true" />
 	                <p:message for="cpfInput" errorStyle="color: red;" />
-	                
 	                <p:outputLabel for="senhaInput"
 	                    value="#{msg['page.login.label.senha']}:" />  
 	                <p:password id="senhaInput" value="#{loginBean.senha}"
 	                    maxlength="11" size="12" required="true" />
 	                <p:message for="senhaInput" errorStyle="color: red;" />
-	                
 	            </h:panelGrid>
 	            <p:commandButton action="#{loginBean.autenticar}"
 	                value="#{msg['page.login.label.entrar']}"
